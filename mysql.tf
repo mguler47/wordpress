@@ -14,11 +14,10 @@ resource "aws_db_instance" "rds" {
 
 }
 
-resource "aws_db_subnet_group" "db_subnet" {
-  name       = "${var.environment}"
-  subnet_ids = [module.vpc.private_subnets[0],module.vpc.private_subnets[1]]
+resource "aws_db_subnet_group" "default" {
+  subnet_ids = [aws_subnet.priv-1.id,aws_subnet.priv-2.id,aws_subnet.priv-3.id]
 
   tags = {
-    Name = "My DB subnet group"
+    Name = "${var.environment}"
   }
 }
