@@ -15,7 +15,7 @@ resource "aws_db_instance" "rds" {
 }
 
 resource "aws_db_subnet_group" "db_subnet" {
-  subnet_ids = ["${module.vpc.outputs.private_subnets[0]}","${module.vpc.outputs.private_subnets[1]}"]
+  subnet_ids = ["${module.vpc.output.private_subnets[0]}","${module.vpc.output.private_subnets[1]}"]
 
   tags = {
     Name = "${var.environment}"
