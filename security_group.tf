@@ -1,7 +1,7 @@
 resource "aws_security_group" "ssh" { 
   name        = "ssh" 
   description = "Allow SSH inbound traffic" 
-  vpc_id      = aws_vpc.vpc_id
+  vpc_id      = aws_vpc.main.vpc_id
 
   ingress { 
     from_port   = 22 
@@ -21,7 +21,7 @@ resource "aws_security_group" "ssh" {
 resource "aws_security_group" "web" { 
   name        = "web" 
   description = "Allow web inbound traffic" 
-  vpc_id      = aws_vpc.vpc_id
+  vpc_id      = aws_vpc.main.vpc_id
 
   ingress { 
     from_port   = 80
@@ -46,7 +46,7 @@ ingress {
 resource "aws_security_group" "db" { 
   name        = "db" 
   description = "Allow db inbound traffic" 
-  vpc_id      = aws_vpc.vpc_id
+  vpc_id      = aws_vpc.main.vpc_id
 
   ingress { 
     from_port   = 3306
