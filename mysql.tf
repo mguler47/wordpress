@@ -14,7 +14,7 @@ resource "aws_db_instance" "rds" {
 
 }
 
-resource "aws_db_subnet_group" "default" {
+resource "aws_db_subnet_group" "db_subnet" {
   name       = "${var.project}-${var.environment}"
   subnet_ids = [module.vpc.private_subnets[0],module.vpc.private_subnets[1]]
 
