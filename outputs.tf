@@ -13,3 +13,7 @@ output "public_subnets" {
 output "private_subnets" {
   value = "${module.vpc.private_subnets}"
 }
+
+output "webserver-ip" {
+  value = "${aws_instance.instance.public_ip}"
+}
