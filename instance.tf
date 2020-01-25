@@ -5,6 +5,7 @@ resource "aws_instance" "instance" {
   subnet_id         = module.vpc.public_subnets[0]
   vpc_security_group_ids = [aws_security_group.ssh.id,aws_security_group.web.id]
   
+  
   provisioner "remote-exec" {
     connection {
       host          = self.public_ip
