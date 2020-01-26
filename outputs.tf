@@ -14,9 +14,9 @@ output "private_subnets" {
   value = "${aws_subnet.private_subnets.*.id}"
 }
 
-output "webserver-ip" {
-  value = "${aws_instance.instance.public_ip}"
-}
+# output "webserver-ip" {
+#   value = "${aws_instance.instance.public_ip}"
+# }
 
 output "rds-endpoint" {
   value = aws_db_instance.rds.address
