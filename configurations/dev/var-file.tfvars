@@ -5,3 +5,4 @@ s3_folder_project = "wordpress"
 s3_folder_name    = "dev"
 s3_tfstate_file   = "infrastructure.tfstate"
 
+s3_bucket_region  = "us-east-1"
