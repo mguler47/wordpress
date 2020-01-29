@@ -1,4 +1,4 @@
-resource "aws_security_group" "ssh-1" { 
+resource "aws_security_group" "ssh" { 
   name        = "ssh" 
   description = "Allow SSH inbound traffic" 
 
@@ -17,7 +17,7 @@ resource "aws_security_group" "ssh-1" {
   } 
 } 
 
-resource "aws_security_group" "web-1" { 
+resource "aws_security_group" "web" { 
   name        = "web" 
   description = "Allow web inbound traffic" 
 
