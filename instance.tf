@@ -4,6 +4,8 @@ resource "aws_instance" "instance" {
   key_name          = aws_key_pair.bastion-wordpress.key_name
   vpc_security_group_ids = [aws_security_group.ssh-1.id,aws_security_group.web-1.id]
   
+
+  
   provisioner "remote-exec" {
     connection {
       host          = self.public_ip
